@@ -118,7 +118,7 @@ function handleNewCommentSubmit(event) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSONstringify(formData)
+    body: JSON.stringify(formData)
   })
   .then(response => {
     if (!response.ok) {
