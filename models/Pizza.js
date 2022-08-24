@@ -5,10 +5,17 @@ const dateFormat = require('../utils/dateFormat');
 
 const PizzaSchema = new Schema({
     pizzaName: {
-        type: String
+        type: String,
+        //to validate
+        required: true,
+        //works like JS trim() and removes extra whitespace
+        trim: true
     },
     createdBy: {
-        type: String
+        type: String,
+        //to validate
+        required: true,
+        trim: true
     },
     createAt: {
         type: Date,
@@ -17,6 +24,8 @@ const PizzaSchema = new Schema({
     },
     size: {
         type: String,
+        require: true,
+        enum: ['Personal', 'Small', 'Medium', 'Large', 'Extra Large'],
         default: 'Large'
     },
     //could specify "array" instead of brackets... same result
